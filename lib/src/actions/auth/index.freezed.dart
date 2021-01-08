@@ -43,27 +43,26 @@ const $Login = _$LoginTearOff();
 /// @nodoc
 mixin _$Login {
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String email, String password), {
+  Result when<Result extends Object>(Result $default(String email, String password), {
     @required Result successful(AppUser user),
     @required Result error(dynamic error),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String email, String password), {
+  Result maybeWhen<Result extends Object>(Result $default(String email, String password), {
     Result successful(AppUser user),
     Result error(dynamic error),
     @required Result orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(Login$ value), {
+  Result map<Result extends Object>(Result $default(Login$ value), {
     @required Result successful(LoginSuccessful value),
     @required Result error(LoginError value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(Login$ value), {
+  Result maybeMap<Result extends Object>(Result $default(Login$ value), {
     Result successful(LoginSuccessful value),
     Result error(LoginError value),
     @required Result orElse(),
@@ -73,7 +72,7 @@ mixin _$Login {
 /// @nodoc
 abstract class $LoginCopyWith<$Res> {
   factory $LoginCopyWith(Login value, $Res Function(Login) then) =
-      _$LoginCopyWithImpl<$Res>;
+  _$LoginCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -81,6 +80,7 @@ class _$LoginCopyWithImpl<$Res> implements $LoginCopyWith<$Res> {
   _$LoginCopyWithImpl(this._value, this._then);
 
   final Login _value;
+
   // ignore: unused_field
   final $Res Function(Login) _then;
 }
@@ -88,7 +88,8 @@ class _$LoginCopyWithImpl<$Res> implements $LoginCopyWith<$Res> {
 /// @nodoc
 abstract class $Login$CopyWith<$Res> {
   factory $Login$CopyWith(Login$ value, $Res Function(Login$) then) =
-      _$Login$CopyWithImpl<$Res>;
+  _$Login$CopyWithImpl<$Res>;
+
   $Res call({String email, String password});
 }
 
@@ -152,8 +153,7 @@ class _$Login$ implements Login$ {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String email, String password), {
+  Result when<Result extends Object>(Result $default(String email, String password), {
     @required Result successful(AppUser user),
     @required Result error(dynamic error),
   }) {
@@ -165,8 +165,7 @@ class _$Login$ implements Login$ {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String email, String password), {
+  Result maybeWhen<Result extends Object>(Result $default(String email, String password), {
     Result successful(AppUser user),
     Result error(dynamic error),
     @required Result orElse(),
@@ -180,8 +179,7 @@ class _$Login$ implements Login$ {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(Login$ value), {
+  Result map<Result extends Object>(Result $default(Login$ value), {
     @required Result successful(LoginSuccessful value),
     @required Result error(LoginError value),
   }) {
@@ -193,8 +191,7 @@ class _$Login$ implements Login$ {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(Login$ value), {
+  Result maybeMap<Result extends Object>(Result $default(Login$ value), {
     Result successful(LoginSuccessful value),
     Result error(LoginError value),
     @required Result orElse(),
@@ -209,26 +206,27 @@ class _$Login$ implements Login$ {
 
 abstract class Login$ implements Login {
   const factory Login$({@required String email, @required String password}) =
-      _$Login$;
+  _$Login$;
 
   String get email;
+
   String get password;
+
   $Login$CopyWith<Login$> get copyWith;
 }
 
 /// @nodoc
 abstract class $LoginSuccessfulCopyWith<$Res> {
-  factory $LoginSuccessfulCopyWith(
-          LoginSuccessful value, $Res Function(LoginSuccessful) then) =
-      _$LoginSuccessfulCopyWithImpl<$Res>;
+  factory $LoginSuccessfulCopyWith(LoginSuccessful value, $Res Function(LoginSuccessful) then) =
+  _$LoginSuccessfulCopyWithImpl<$Res>;
+
   $Res call({AppUser user});
 }
 
 /// @nodoc
 class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
     implements $LoginSuccessfulCopyWith<$Res> {
-  _$LoginSuccessfulCopyWithImpl(
-      LoginSuccessful _value, $Res Function(LoginSuccessful) _then)
+  _$LoginSuccessfulCopyWithImpl(LoginSuccessful _value, $Res Function(LoginSuccessful) _then)
       : super(_value, (v) => _then(v as LoginSuccessful));
 
   @override
@@ -274,8 +272,7 @@ class _$LoginSuccessful implements LoginSuccessful {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String email, String password), {
+  Result when<Result extends Object>(Result $default(String email, String password), {
     @required Result successful(AppUser user),
     @required Result error(dynamic error),
   }) {
@@ -287,8 +284,7 @@ class _$LoginSuccessful implements LoginSuccessful {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String email, String password), {
+  Result maybeWhen<Result extends Object>(Result $default(String email, String password), {
     Result successful(AppUser user),
     Result error(dynamic error),
     @required Result orElse(),
@@ -302,8 +298,7 @@ class _$LoginSuccessful implements LoginSuccessful {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(Login$ value), {
+  Result map<Result extends Object>(Result $default(Login$ value), {
     @required Result successful(LoginSuccessful value),
     @required Result error(LoginError value),
   }) {
@@ -315,8 +310,7 @@ class _$LoginSuccessful implements LoginSuccessful {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(Login$ value), {
+  Result maybeMap<Result extends Object>(Result $default(Login$ value), {
     Result successful(LoginSuccessful value),
     Result error(LoginError value),
     @required Result orElse(),
@@ -333,14 +327,15 @@ abstract class LoginSuccessful implements Login {
   const factory LoginSuccessful(AppUser user) = _$LoginSuccessful;
 
   AppUser get user;
+
   $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith;
 }
 
 /// @nodoc
 abstract class $LoginErrorCopyWith<$Res> {
-  factory $LoginErrorCopyWith(
-          LoginError value, $Res Function(LoginError) then) =
-      _$LoginErrorCopyWithImpl<$Res>;
+  factory $LoginErrorCopyWith(LoginError value, $Res Function(LoginError) then) =
+  _$LoginErrorCopyWithImpl<$Res>;
+
   $Res call({dynamic error});
 }
 
@@ -365,8 +360,7 @@ class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
 
 @Implements(ErrorAction)
 
-/// @nodoc
-class _$LoginError implements LoginError {
+/// @nodoc class _$LoginError implements LoginError {
   const _$LoginError(this.error) : assert(error != null);
 
   @override
@@ -395,8 +389,7 @@ class _$LoginError implements LoginError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>(
-    Result $default(String email, String password), {
+  Result when<Result extends Object>(Result $default(String email, String password), {
     @required Result successful(AppUser user),
     @required Result error(dynamic error),
   }) {
@@ -408,8 +401,7 @@ class _$LoginError implements LoginError {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>(
-    Result $default(String email, String password), {
+  Result maybeWhen<Result extends Object>(Result $default(String email, String password), {
     Result successful(AppUser user),
     Result error(dynamic error),
     @required Result orElse(),
@@ -423,8 +415,7 @@ class _$LoginError implements LoginError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>(
-    Result $default(Login$ value), {
+  Result map<Result extends Object>(Result $default(Login$ value), {
     @required Result successful(LoginSuccessful value),
     @required Result error(LoginError value),
   }) {
@@ -436,8 +427,7 @@ class _$LoginError implements LoginError {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>(
-    Result $default(Login$ value), {
+  Result maybeMap<Result extends Object>(Result $default(Login$ value), {
     Result successful(LoginSuccessful value),
     Result error(LoginError value),
     @required Result orElse(),
@@ -454,5 +444,6 @@ abstract class LoginError implements Login, ErrorAction {
   const factory LoginError(dynamic error) = _$LoginError;
 
   dynamic get error;
+
   $LoginErrorCopyWith<LoginError> get copyWith;
 }
