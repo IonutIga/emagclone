@@ -8,4 +8,5 @@ import 'package:emag/src/models/serializers.dart';
 export 'auth/index.dart';
 
 part 'app_state.dart';
+
 part 'index.g.dart';

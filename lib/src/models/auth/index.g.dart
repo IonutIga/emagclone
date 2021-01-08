@@ -6,49 +6,8 @@ part of auth_models;
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<AuthState> _$authStateSerializer = new _$AuthStateSerializer();
 Serializer<AppUser> _$appUserSerializer = new _$AppUserSerializer();
-
-class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
-  @override
-  final Iterable<Type> types = const [AuthState, _$AuthState];
-  @override
-  final String wireName = 'AuthState';
-
-  @override
-  Iterable<Object> serialize(Serializers serializers, AuthState object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    if (object.user != null) {
-      result
-        ..add('user')
-        ..add(serializers.serialize(object.user,
-            specifiedType: const FullType(AppUser)));
-    }
-    return result;
-  }
-
-  @override
-  AuthState deserialize(Serializers serializers, Iterable<Object> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new AuthStateBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final dynamic value = iterator.current;
-      switch (key) {
-        case 'user':
-          result.user.replace(serializers.deserialize(value,
-              specifiedType: const FullType(AppUser)) as AppUser);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
+Serializer<AuthState> _$authStateSerializer = new _$AuthStateSerializer();
 
 class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   @override
@@ -112,88 +71,44 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   }
 }
 
-class _$AuthState extends AuthState {
+class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
   @override
-  final AppUser user;
-
-  factory _$AuthState([void Function(AuthStateBuilder) updates]) =>
-      (new AuthStateBuilder()..update(updates)).build();
-
-  _$AuthState._({this.user}) : super._();
+  final Iterable<Type> types = const [AuthState, _$AuthState];
+  @override
+  final String wireName = 'AuthState';
 
   @override
-  AuthState rebuild(void Function(AuthStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  AuthStateBuilder toBuilder() => new AuthStateBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is AuthState && user == other.user;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, user.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('AuthState')..add('user', user))
-        .toString();
-  }
-}
-
-class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
-  _$AuthState _$v;
-
-  AppUserBuilder _user;
-  AppUserBuilder get user => _$this._user ??= new AppUserBuilder();
-  set user(AppUserBuilder user) => _$this._user = user;
-
-  AuthStateBuilder();
-
-  AuthStateBuilder get _$this {
-    if (_$v != null) {
-      _user = _$v.user?.toBuilder();
-      _$v = null;
+  Iterable<Object> serialize(Serializers serializers, AuthState object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object>[];
+    if (object.user != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(object.user,
+            specifiedType: const FullType(AppUser)));
     }
-    return this;
+    return result;
   }
 
   @override
-  void replace(AuthState other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
-    _$v = other as _$AuthState;
-  }
+  AuthState deserialize(Serializers serializers, Iterable<Object> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new AuthStateBuilder();
 
-  @override
-  void update(void Function(AuthStateBuilder) updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  _$AuthState build() {
-    _$AuthState _$result;
-    try {
-      _$result = _$v ?? new _$AuthState._(user: _user?.build());
-    } catch (_) {
-      String _$failedField;
-      try {
-        _$failedField = 'user';
-        _user?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AuthState', _$failedField, e.toString());
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final dynamic value = iterator.current;
+      switch (key) {
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+              specifiedType: const FullType(AppUser)) as AppUser);
+          break;
       }
-      rethrow;
     }
-    replace(_$result);
-    return _$result;
+
+    return result.build();
   }
 }
 
@@ -311,6 +226,91 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
             email: email,
             displayName: displayName,
             photoUrl: photoUrl);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$AuthState extends AuthState {
+  @override
+  final AppUser user;
+
+  factory _$AuthState([void Function(AuthStateBuilder) updates]) =>
+      (new AuthStateBuilder()..update(updates)).build();
+
+  _$AuthState._({this.user}) : super._();
+
+  @override
+  AuthState rebuild(void Function(AuthStateBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AuthStateBuilder toBuilder() => new AuthStateBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AuthState && user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, user.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('AuthState')..add('user', user))
+        .toString();
+  }
+}
+
+class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
+  _$AuthState _$v;
+
+  AppUserBuilder _user;
+  AppUserBuilder get user => _$this._user ??= new AppUserBuilder();
+  set user(AppUserBuilder user) => _$this._user = user;
+
+  AuthStateBuilder();
+
+  AuthStateBuilder get _$this {
+    if (_$v != null) {
+      _user = _$v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(AuthState other) {
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
+    _$v = other as _$AuthState;
+  }
+
+  @override
+  void update(void Function(AuthStateBuilder) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$AuthState build() {
+    _$AuthState _$result;
+    try {
+      _$result = _$v ?? new _$AuthState._(user: _user?.build());
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'AuthState', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -9,7 +9,6 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 Future<Store<AppState>> init() async {
-
   Firebase.initializeApp();
 
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -20,6 +19,6 @@ Future<Store<AppState>> init() async {
   final AppEpics epics = AppEpics(authApi: authApi);
   final AppState initialState = AppState.initialState();
 
-  return Store<AppState>(reducer, initialState: initialState, middleware: <Middleware<AppState>>[
-  EpicMiddleware<AppState>(epics.epics)]);
+  return Store<AppState>(reducer,
+      initialState: initialState, middleware: <Middleware<AppState>>[EpicMiddleware<AppState>(epics.epics)]);
 }

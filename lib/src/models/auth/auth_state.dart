@@ -2,7 +2,7 @@ part of auth_models;
 
 abstract class AuthState implements Built<AuthState, AuthStateBuilder> {
   factory AuthState.initialState() {
-    return _$AuthState((AuthStateBuilder b){});
+    return _$AuthState((AuthStateBuilder b) {});
   }
 
   AuthState._();
