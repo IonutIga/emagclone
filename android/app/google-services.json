@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "506046373556",
+    "project_id": "emagclone",
+    "storage_bucket": "emagclone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506046373556:android:08ba686c717b33806441e1",
+        "android_client_info": {
+          "package_name": "com.example.emag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506046373556-j7epig2m74v70cefiitse78bgdgnrd2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSMRiDVwWUNOFk4ba7Iv_DZau5S0mbgmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506046373556-j7epig2m74v70cefiitse78bgdgnrd2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
